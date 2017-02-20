@@ -1,0 +1,52 @@
+<link rel="import"  href="https://rawgit.com/Download/polymer-cdn/master/lib/polymer/polymer.html">
+
+<dom-module id="my-simple-grid">
+    <style>
+        th {
+            text-align: left;
+        }
+        div {
+            font-family: 'segoe ui', arial, sans-serif;
+        }
+    </style>
+    
+    <template>
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <template is="dom-repeat" items={{columns}} as="column">
+                            <th>{{column.title}}</th>
+                        </template>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template id="mySimpleGridContent" is="dom-repeat" items="{{dataSource}}" as="row">
+                        <tr>
+                            <content></content>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </div>
+    </template>
+
+  <script>
+    Polymer({
+      is: "my-simple-grid",
+      properties: {
+          dataSource: {
+              type: Array,
+              value: []
+          },
+          columns: {
+              type: Array,
+              value: []
+          }
+      },
+      attached: function() {
+        this.set('columns', this.getContentChildren());
+      }
+    });
+  </script>
+</dom-module>

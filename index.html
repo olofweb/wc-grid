@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+      <meta charset="utf-8">
+    <link rel="import" href="my-simple-grid.comp.html">
+    <link rel="import" href="my-simple-column.comp.html">
+  </head>
+  <body>
+    <my-simple-grid id="mainGrid">
+        <my-simple-column name="numero" title="Numéro"></my-simple-column>
+        <my-simple-column name="nom" title="Nom"></my-simple-column>
+        <my-simple-column name="prenom" title="Prénom"></my-simple-column>
+    </my-simple-grid>
+    <script>
+        // window.addEventListener('WebComponentsReady', function(e) {
+            var data = [
+                {
+                    numero: 12345,
+                    nom: "Garnier",
+                    prenom: "Francis",
+                    sexe: "M"
+                },
+                {
+                    numero: 12346,
+                    nom: "Garnier",
+                    prenom: "Sylvie",
+                    sexe: "F"
+                }
+            ];
+
+            document.querySelector('#mainGrid').dataSource = data;
+        // });
+      </script>
+  </body>
+</html>

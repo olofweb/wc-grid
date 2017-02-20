@@ -1,0 +1,26 @@
+<link rel="import"  href="https://rawgit.com/Download/polymer-cdn/master/lib/polymer/polymer.html">
+
+<dom-module id="my-simple-column">
+    <style>
+        div {
+            font-family: 'segoe ui', arial, sans-serif;
+        }
+    </style>
+    
+    <template>
+        <span>Column content !!!</span>
+    </template>
+
+    <script>
+        Polymer({
+            is: "my-simple-column",
+            properties: {
+                name: String,
+                title: String
+            },
+            // événements du cycle de vie
+            ready: function() {
+            }
+        });
+    </script>
+</dom-module>
